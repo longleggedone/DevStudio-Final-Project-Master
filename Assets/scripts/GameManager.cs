@@ -5,11 +5,11 @@ public class GameManager : MonoBehaviour {
 	
 	
 
-	public BoardManager boardScript;
+	public SprinklerProcGen boardScript;
 
 	// Use this for initialization
 	void Awake () {
-		boardScript = GetComponent<BoardManager>();
+		boardScript = GetComponent<SprinklerProcGen>();
 		StartGame();
 	}
 	
