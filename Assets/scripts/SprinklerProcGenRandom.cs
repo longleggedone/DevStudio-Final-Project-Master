@@ -36,6 +36,7 @@ public class SprinklerProcGenRandom: MonoBehaviour {
 	public GameObject[] wallTiles;
 	//the distance from this object you want to instantiate a prefab
 	public float instantiateDistance = 1.0f;
+	//private Transform wallHolder;
 	//the number of degrees for this object to rotate each time
 	//public float rotationAngle = 0f;
 	//public float rotationAmount = 30f;
@@ -46,6 +47,7 @@ public class SprinklerProcGenRandom: MonoBehaviour {
 	
 	
 	void Start(){
+		//wallHolder = new GameObject ("Walls").transform;
 		for (int i = 0; i < numberOfSpawnPositions; i++){
 			
 			transform.Rotate (new Vector3(0,Mathf.Floor (360/numberOfSpawnPositions),0));
@@ -56,8 +58,13 @@ public class SprinklerProcGenRandom: MonoBehaviour {
 			GameObject toInstantiate = wallTiles[Random.Range(0, wallTiles.Length)];
 			//Instantiate(toInstantiate, Vector3.forward * instantiateDistance, Quaternion.identity);
 			//Vector3 newPos = new Vector3 (0, 0, instantiateDistance);
-			Instantiate (toInstantiate, transform.position + transform.forward * instantiateDistance, transform.rotation);
-			
+
+			//GameObject instance = Instantiate(toInstantiate, new Vector3 (x * 5, 0f, z * 5), Quaternion.identity) as GameObject;
+			//parents instantiated clone to organizer object
+			//instance.transform.SetParent(boardHolder);
+
+			GameObject instance = Instantiate (toInstantiate, transform.position + transform.forward * instantiateDistance, transform.rotation) as GameObject;
+			instance.transform.SetParent(transform, false);
 			//mathf.floor to round down floats
 			//SpawnWalls();
 		}
