@@ -12,6 +12,6 @@ public class GameLogic : MonoBehaviour {
 	// Use this for initialization
 	void OnGUI () {
 		string gemText = "P1 - " + scoreCount;
-		GUI.Box (new Rect(Screen.width - 150, 20, 130, 20) );
+		GUI.Box (new Rect(Screen.width - 150, 20, 130, 20), " ");
 	}
 }
