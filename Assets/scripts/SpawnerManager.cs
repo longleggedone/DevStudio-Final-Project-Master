@@ -1,20 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameManager : MonoBehaviour {
-	
-	
+public class SpawnerManager : MonoBehaviour {
 
-	public SprinklerProcGen boardScript;
-
+	public SprinklerProcGen spawnScript;
+	
 	// Use this for initialization
 	void Awake () {
-		boardScript = GetComponent<SprinklerProcGen>();
+		spawnScript = GetComponent<SprinklerProcGen>();
 		StartGame();
 	}
 	
 	void StartGame(){
-		boardScript.SetupScene();
+		spawnScript.SetupScene();
 	}
 	
 	// Update is called once per frame
