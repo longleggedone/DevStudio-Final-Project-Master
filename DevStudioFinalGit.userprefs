@@ -1,24 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\SprinklerProcGenRandom.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\ballSpawner.cs">
     <Files>
-      <File FileName="Assets\scripts\SprinklerProcGenRandom.cs" Line="59" Column="92" />
-      <File FileName="Assets\scripts\SprinklerProcGen.cs" Line="114" Column="49" />
-      <File FileName="Assets\scripts\SpawnPoint.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\SpawnerManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\BoardManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\ballSpawner.cs" Line="12" Column="18" />
+      <File FileName="Assets\scripts\SprinklerProcGenRandom.cs" Line="67" Column="51" />
+      <File FileName="Assets\scripts\BoardManager.cs" Line="69" Column="5" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="Assembly-CSharp" expanded="True">
-            <Node name="scripts" expanded="True">
-              <Node name="SprinklerProcGenRandom.cs" selected="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
