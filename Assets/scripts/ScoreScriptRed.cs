@@ -9,7 +9,7 @@ public class ScoreScriptRed : MonoBehaviour {
 
 	void OnTriggerStay ( Collider activator ) {
 
-		if (Input.GetKeyDown (KeyCode.R)) { 
+		if (Input.GetKeyDown (KeyCode.P)) { 
 			ScoreRed++;
 			Destroy ( activator.gameObject );
 
@@ -18,7 +18,7 @@ public class ScoreScriptRed : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		RedScoreText.text = "Red [R] \nScore: " + ScoreRed.ToString();
+		RedScoreText.text = "Red [P] \nScore: " + ScoreRed.ToString();
 	}
 
 }

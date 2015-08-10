@@ -9,7 +9,7 @@ public class ScoreScriptYellow : MonoBehaviour {
 	
 	void OnTriggerStay ( Collider activator ) {
 		
-		if (Input.GetKeyDown (KeyCode.P)) { 
+		if (Input.GetKeyDown (KeyCode.M)) { 
 			ScoreYellow++;
 			Destroy ( activator.gameObject );
 			
@@ -18,7 +18,7 @@ public class ScoreScriptYellow : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		YellowScoreText.text = "Yellow [P] \nScore: " + ScoreYellow.ToString();
+		YellowScoreText.text = "Yellow [M] \nScore: " + ScoreYellow.ToString();
 	}
 
 }

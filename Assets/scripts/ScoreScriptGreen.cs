@@ -9,7 +9,7 @@ public class ScoreScriptGreen : MonoBehaviour {
 	
 	void OnTriggerStay ( Collider activator ) {
 		
-		if (Input.GetKeyDown (KeyCode.U)) { 
+		if (Input.GetKeyDown (KeyCode.X)) { 
 			ScoreGreen++;
 			Destroy ( activator.gameObject );
 			
@@ -18,6 +18,6 @@ public class ScoreScriptGreen : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		GreenScoreText.text = "Green [U] \nScore: " + ScoreGreen.ToString();
+		GreenScoreText.text = "Green [X] \nScore: " + ScoreGreen.ToString();
 	}
 }
