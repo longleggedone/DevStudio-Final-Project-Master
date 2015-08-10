@@ -60,7 +60,10 @@
      <Compile Include="Assets\scripts\PointCollect.cs" />
      <Compile Include="Assets\scripts\Reload.cs" />
      <Compile Include="Assets\scripts\RotateGameBoard.cs" />
+     <Compile Include="Assets\scripts\ScoreScriptBlue.cs" />
+     <Compile Include="Assets\scripts\ScoreScriptGreen.cs" />
      <Compile Include="Assets\scripts\ScoreScriptRed.cs" />
+     <Compile Include="Assets\scripts\ScoreScriptYellow.cs" />
      <Compile Include="Assets\scripts\SpawnPoint.cs" />
      <Compile Include="Assets\scripts\SpawnerManager.cs" />
      <Compile Include="Assets\scripts\SprinklerProcGen.cs" />

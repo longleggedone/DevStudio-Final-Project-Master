@@ -1,20 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class ScoreScriptRed : MonoBehaviour {
 
-
+	public Text RedScoreText;
 	public int ScoreRed = 0;
 
 	void OnTriggerStay ( Collider activator ) {
 
 		if (Input.GetKeyDown (KeyCode.R)) { 
-			transform.Rotate ( 0f, 5f, 0f ); // if triggered, then spin
 			ScoreRed++;
-			Debug.Log (ScoreRed);
 			Destroy ( activator.gameObject );
 
 		}
+	}
+
+	// Update is called once per frame
+	void Update () {
+		RedScoreText.text = "Red [R] \nScore: " + ScoreRed.ToString();
 	}
 
 }
