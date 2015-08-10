@@ -49,6 +49,7 @@
      <Compile Include="Assets\scripts\BoardManager.cs" />
      <Compile Include="Assets\scripts\GameLogic.cs" />
      <Compile Include="Assets\scripts\GameManager.cs" />
+     <Compile Include="Assets\scripts\HippoChomp.cs" />
      <Compile Include="Assets\scripts\PlayerControlBlue.cs" />
      <Compile Include="Assets\scripts\PlayerControlBlueReverse.cs" />
      <Compile Include="Assets\scripts\PlayerControlGreen.cs" />
