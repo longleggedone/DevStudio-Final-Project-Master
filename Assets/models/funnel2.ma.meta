@@ -1,22 +1,37 @@
 fileFormatVersion: 2
-guid: 47ae231e0c8e33147a498e44d60c43e3
-timeCreated: 1439179288
+guid: 077324dade660524a9dae905e30bd620
+timeCreated: 1439178744
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: cone
-    100002: //RootNode
-    100004: volcano
-    400000: cone
-    400002: //RootNode
-    400004: volcano
-    2300000: cone
-    2300002: volcano
-    3300000: cone
-    3300002: volcano
-    4300000: cone
-    4300002: volcano
+    100000: //RootNode
+    100002: pCylinder1
+    100004: pPipe1
+    100006: pPipe2
+    100008: pPipe3
+    100010: transform1
+    100012: transform2
+    100014: transform3
+    100016: base
+    400000: //RootNode
+    400002: pCylinder1
+    400004: pPipe1
+    400006: pPipe2
+    400008: pPipe3
+    400010: transform1
+    400012: transform2
+    400014: transform3
+    400016: base
+    2300000: pPipe3
+    2300002: pPipe1
+    2300004: base
+    3300000: pPipe3
+    3300002: pPipe1
+    3300004: base
+    4300000: pPipe3
+    4300002: pPipe1
+    4300004: base
     9500000: //RootNode
   materials:
     importMaterials: 1

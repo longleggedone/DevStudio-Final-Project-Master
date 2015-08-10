@@ -6,13 +6,18 @@ public class ballSpawner : MonoBehaviour {
 	public GameObject[] balls;
 	public int volleyCount = 5;
 	public int numberOfBalls = 20;
+	public float instantiateDistance = 1.0f;
 	public GameObject moneyBall;
-
+	private Transform ballTracker;
+	public Transform gameBoard;
 
 	void Start () {
+		ballTracker = new GameObject ("BallTracker").transform;
+		ballTracker.transform.SetParent (gameBoard, false);
+
 		InvokeRepeating("volleySpawn", 2f, 15f ); // 5 balls are created every 15 seconds
 
-		InvokeRepeating("moneyBall", 5f, 10f );
+		InvokeRepeating("moneyBallSpawn", 5f, 10f );
 	}
 	
 
@@ -23,6 +28,12 @@ public class ballSpawner : MonoBehaviour {
 		}
 	}
 
+	void moneyBallSpawn(){
+		Vector3 euler = transform.eulerAngles;
+		euler.y = Random.Range (0f, 360f);
+		transform.eulerAngles = euler;
+		Instantiate (moneyBall, gameObject.transform.position + transform.forward * instantiateDistance, Quaternion.identity);
+	}
 
 	//
 
@@ -37,10 +48,12 @@ public class ballSpawner : MonoBehaviour {
 //		}
 
 	void ballSpawn () {
-
+		Vector3 euler = transform.eulerAngles;
+		euler.y = Random.Range (0f, 360f);
+		transform.eulerAngles = euler;
 		GameObject randomBall = balls[Random.Range (0, balls.Length)];
-		Instantiate ( randomBall, gameObject.transform.position, Quaternion.identity );
-
+		GameObject newBall = Instantiate ( randomBall, gameObject.transform.position + transform.forward * instantiateDistance, Quaternion.identity) as GameObject;
+		newBall.transform.SetParent(ballTracker, false);
 	}
 
 
