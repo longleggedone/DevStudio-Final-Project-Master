@@ -1,14 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\PlayerControlBlue.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\ScoreScriptYellow.cs">
     <Files>
-      <File FileName="Assets\scripts\ScoreScriptBlue.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\PlayerControlBlue.cs" Line="27" Column="1" />
-      <File FileName="Assets\scripts\ballSpawner.cs" Line="69" Column="3" />
-      <File FileName="Assets\scripts\SprinklerProcGenRandom.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\BoardManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\ballSpawner.cs" Line="41" Column="44" />
+      <File FileName="Assets\scripts\ScoreScriptYellow.cs" Line="23" Column="42" />
+      <File FileName="Assets\scripts\PlayerControlYellowReverse.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\ScoreScriptBlue.cs" Line="23" Column="42" />
+      <File FileName="Assets\scripts\ScoreScriptGreen.cs" Line="23" Column="42" />
+      <File FileName="Assets\scripts\ScoreScriptRed.cs" Line="19" Column="42" />
       <File FileName="Assets\scripts\HippoChomp.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\ScoreScriptGreen.cs" Line="24" Column="1" />
+      <File FileName="Assets\scripts\StartScreenManager.cs" Line="28" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
