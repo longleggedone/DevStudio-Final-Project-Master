@@ -32,7 +32,8 @@ public class ballSpawner : MonoBehaviour {
 		Vector3 euler = transform.eulerAngles;
 		euler.y = Random.Range (0f, 360f);
 		transform.eulerAngles = euler;
-		Instantiate (moneyBall, gameObject.transform.position + transform.forward * instantiateDistance, Quaternion.identity);
+		GameObject newMoneyBall = Instantiate (moneyBall, gameObject.transform.position + transform.forward * instantiateDistance, Quaternion.identity) as GameObject;
+		newMoneyBall.transform.SetParent(ballTracker, false);
 	}
 
 	//
