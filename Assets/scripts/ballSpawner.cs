@@ -11,6 +11,10 @@ public class ballSpawner : MonoBehaviour {
 	private Transform ballTracker;
 	public Transform gameBoard;
 
+	public AudioSource soundManager;
+	public AudioClip ballSound;
+	public AudioClip moneyBallSound;
+
 	void Start () {
 		ballTracker = new GameObject ("BallTracker").transform;
 		ballTracker.transform.SetParent (gameBoard, false);
@@ -32,7 +36,9 @@ public class ballSpawner : MonoBehaviour {
 		Vector3 euler = transform.eulerAngles;
 		euler.y = Random.Range (0f, 360f);
 		transform.eulerAngles = euler;
-		Instantiate (moneyBall, gameObject.transform.position + transform.forward * instantiateDistance, Quaternion.identity);
+		GameObject newMoneyBall = Instantiate (moneyBall, gameObject.transform.position + transform.forward * instantiateDistance, Quaternion.identity) as GameObject;
+		newMoneyBall.transform.SetParent(ballTracker, false);
+		soundManager.PlayOneShot(moneyBallSound);
 	}
 
 	//
@@ -54,6 +60,7 @@ public class ballSpawner : MonoBehaviour {
 		GameObject randomBall = balls[Random.Range (0, balls.Length)];
 		GameObject newBall = Instantiate ( randomBall, gameObject.transform.position + transform.forward * instantiateDistance, Quaternion.identity) as GameObject;
 		newBall.transform.SetParent(ballTracker, false);
+		soundManager.PlayOneShot(ballSound);
 	}
 
 

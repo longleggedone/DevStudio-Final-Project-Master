@@ -6,12 +6,22 @@ public class ScoreScriptGreen : MonoBehaviour {
 
 	public Text GreenScoreText;
 	public int ScoreGreen = 0;
+
+	public AudioClip chompSound;
+	public AudioSource soundManager;
 	
 	void OnTriggerStay ( Collider activator ) {
 		
 		if (Input.GetKeyDown (KeyCode.X)) { 
-			ScoreGreen++;
-			Destroy ( activator.gameObject );
+			if(activator.tag == "MoneyBall"){
+				ScoreGreen = ScoreGreen + 5;
+				Destroy ( activator.gameObject );
+				soundManager.PlayOneShot(chompSound);
+			}else if(activator.tag == "GameBall"){
+				ScoreGreen++ ;
+				Destroy (activator.gameObject);
+				soundManager.PlayOneShot(chompSound);
+			}
 			
 		}
 	}

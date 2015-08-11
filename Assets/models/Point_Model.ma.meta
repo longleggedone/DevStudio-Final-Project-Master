@@ -32,6 +32,9 @@ ModelImporter:
     100048: transform4
     100050: transform5
     100052: transform6
+    100054: moneyball
+    100056: pointball
+    100058: pointball2
     400000: group
     400002: group1
     400004: group2
@@ -59,15 +62,27 @@ ModelImporter:
     400048: transform4
     400050: transform5
     400052: transform6
+    400054: moneyball
+    400056: pointball
+    400058: pointball2
     2300000: pasted__pasted__pCube1
     2300002: pasted__pCube1
     2300004: pCube3
+    2300006: moneyball
+    2300008: pointball
+    2300010: pointball2
     3300000: pasted__pasted__pCube1
     3300002: pasted__pCube1
     3300004: pCube3
+    3300006: moneyball
+    3300008: pointball
+    3300010: pointball2
     4300000: pasted__pCube1
     4300002: pCube3
     4300004: pasted__pasted__pCube1
+    4300006: pointball
+    4300008: moneyball
+    4300010: pointball2
     9500000: //RootNode
   materials:
     importMaterials: 1
