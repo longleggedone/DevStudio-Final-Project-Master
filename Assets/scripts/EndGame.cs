@@ -21,13 +21,29 @@ public class EndGame : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (ScoreB.ScoreBlue > ObjectiveScore) { 
-			VictoryText.text = "Player Blue WINS!!!";
+			VictoryText.color = Color.blue;
+			VictoryText.text = "Blue player WINS!!!  Press [R] to Restart";
+			if (Input.GetKeyDown(KeyCode.R)){
+				Application.LoadLevel (Application.loadedLevel);
+			}
 		} else if (ScoreG.ScoreGreen > ObjectiveScore) {
-			VictoryText.text = "Player Green WINS!!!";
+			VictoryText.color = Color.green;
+			VictoryText.text = "Green player WINS!!!  Press [R] to Restart";
+			if (Input.GetKeyDown(KeyCode.R)){
+				Application.LoadLevel (Application.loadedLevel);
+			}
 		} else if (ScoreY.ScoreYellow > ObjectiveScore) {
-			VictoryText.text = "Player Yellow WINS!!!";
+			VictoryText.color = Color.yellow;
+			VictoryText.text = "Yellow player WINS!!!  Press [R] to Restart";
+			if (Input.GetKeyDown(KeyCode.R)){
+				Application.LoadLevel (Application.loadedLevel);
+			}
 		} else if (ScoreR.ScoreRed > ObjectiveScore) {
-			VictoryText.text = "Player Red WINS!!!";
+			VictoryText.color = Color.red;
+			VictoryText.text = "Red player WINS!!!  Press [R] to Restart";
+			if (Input.GetKeyDown(KeyCode.R)){
+				Application.LoadLevel (Application.loadedLevel);
+			}
 		}
 	
 	}

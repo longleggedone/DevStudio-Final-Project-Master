@@ -14,6 +14,8 @@ ModelImporter:
     100012: transform2
     100014: transform3
     100016: base
+    100018: polySurface1
+    100020: polySurface2
     400000: //RootNode
     400002: pCylinder1
     400004: pPipe1
@@ -23,15 +25,23 @@ ModelImporter:
     400012: transform2
     400014: transform3
     400016: base
+    400018: polySurface1
+    400020: polySurface2
     2300000: pPipe3
     2300002: pPipe1
     2300004: base
+    2300006: polySurface1
+    2300008: polySurface2
     3300000: pPipe3
     3300002: pPipe1
     3300004: base
+    3300006: polySurface1
+    3300008: polySurface2
     4300000: pPipe3
     4300002: pPipe1
     4300004: base
+    4300006: polySurface1
+    4300008: polySurface2
     9500000: //RootNode
   materials:
     importMaterials: 1
