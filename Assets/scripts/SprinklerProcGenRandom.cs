@@ -28,11 +28,12 @@ public class SprinklerProcGenRandom: MonoBehaviour {
 	//list of spawnPositions
 	//private List <Vector3> spawnPositions = new List<Vector3>();
 	//arrays for holding game objects of different types
-	//public GameObject[] floorTiles;
+
 //	public GameObject[] redWallTiles;
 //	public GameObject[] blueWallTiles;
 //	public GameObject[] yellowWallTiles;
 //	public GameObject[] greenWallTiles;
+	//array for holding game objects
 	public GameObject[] wallTiles;
 	//the distance from this object you want to instantiate a prefab
 	public float instantiateDistance = 1.0f;

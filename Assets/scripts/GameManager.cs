@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	void StartGame(){
-		boardScript.SetupScene();
+		//boardScript.SetupScene();
 	}
 	
 	// Update is called once per frame
