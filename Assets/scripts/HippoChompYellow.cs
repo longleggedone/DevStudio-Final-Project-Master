@@ -9,7 +9,7 @@ public class HippoChompYellow : MonoBehaviour {
 	//public bool readyToFire = true;
 	//public bool closing = false;
 	//public bool opening = false;
-	public float speed = 1;
+	public float speed = 0.5f;
 	public bool biting = false;
 	private Quaternion openMouth;
 	private Quaternion closedMouth;
@@ -29,8 +29,8 @@ public class HippoChompYellow : MonoBehaviour {
 		//Quaternion openMouth = Quaternion.Euler (-75, 0, 0);
 		//Quaternion closedMouth = Quaternion.Euler (0, 0, 0);
 		while (t <1f){
-			t += Time.deltaTime;
-			transform.localRotation = Quaternion.Slerp (openMouth, closedMouth, t * speed);
+			t += Time.deltaTime/speed;
+			transform.localRotation = Quaternion.Slerp (openMouth, closedMouth, t);
 			yield return 0;
 			//yield return StartCoroutine (HippoResetCoroutine());
 		}
@@ -47,8 +47,8 @@ public class HippoChompYellow : MonoBehaviour {
 		//Quaternion openMouth = Quaternion.Euler (-75, 0, 0);
 		//Quaternion closedMouth = Quaternion.Euler (0, 0, 0);
 		while (t <1f){
-			t += Time.deltaTime;
-			transform.localRotation = Quaternion.Slerp (closedMouth, openMouth, t * speed);
+			t += Time.deltaTime/speed;
+			transform.localRotation = Quaternion.Slerp (closedMouth, openMouth, t);
 			yield return 0;
 			//yield return opening = false;
 		}
