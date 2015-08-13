@@ -12,7 +12,7 @@ public class SpawnerManager : MonoBehaviour {
 	}
 	
 	void StartGame(){
-		spawnScript.SetupScene();
+		//spawnScript.SetupScene();
 	}
 	
 	// Update is called once per frame

@@ -21,6 +21,18 @@ public class SprinklerProcGen: MonoBehaviour {
 			maximum = max;
 		}
 	}
+	//class for holding spawn point positions and rotations
+	[Serializable]
+	public class SpawnPointData{
+		public Vector3 spawnPosition;
+		public Quaternion spawnRotation;
+
+		//allows for input of spawn positions and rotations as 
+		public SpawnPointData (Vector3 spawnPos, Quaternion spawnRot){
+			spawnPosition = spawnPos;
+			spawnRotation = spawnRot;
+		}
+	}
 //	//ranges for limiting amount of objects of each type to spawn
 //	public Count redWallCount = new Count (7,9);
 //	public Count blueWallCount = new Count (7,9);
@@ -30,9 +42,13 @@ public class SprinklerProcGen: MonoBehaviour {
 //	
 
 	//the maximum number of times you want this object to instantiate a prefab
-	public int numberOfSpawnPositions = 12;
+	public int numberOfWallsToSpawn = 12;
+	//list of spawnPoints
+	private List <SpawnPointData> spawnPoints = new List<SpawnPointData>();
 	//list of spawnPositions
-	private List <Vector3> spawnPositions = new List<Vector3>();
+	//private List <Vector3> spawnPositions = new List<Vector3>();
+	//list of SpawnRotations
+	//private List <Quaternion> spawnRotations = new List<Quaternion>();
 	//arrays for holding game objects of different types
 	//public GameObject[] floorTiles;
 	public GameObject[] redWallTiles;
@@ -52,13 +68,18 @@ public class SprinklerProcGen: MonoBehaviour {
 
 
 	void InitialiseList(){
-		for (int i = 0; i < numberOfSpawnPositions; i++){
-
-			transform.Rotate (new Vector3(0,Mathf.Floor (360/numberOfSpawnPositions),0));
+		//as long as i < the number of walls to spawn, increment
+		for (int i = 0; i < numberOfWallsToSpawn; i++){
+			//rotate self on y axis a number of degrees equal to 360 / the number of walls to spawn, rounded down
+			//this creates even wall spacing
+			transform.Rotate (new Vector3(0,Mathf.Floor (360/numberOfWallsToSpawn),0));
 
 			Debug.Log (transform.rotation);
-			spawnPositions.Add (transform.forward * instantiateDistance);
-			Debug.Log (spawnPositions);
+			//adds positional and rotational information to spawn point list for future use
+			spawnPoints.Add (new SpawnPointData(transform.position + transform.forward * instantiateDistance, transform.rotation));
+			//spawnPositions.Add (transform.position + transform.forward * instantiateDistance);
+			//spawnRotations.Add (transform.rotation);
+			Debug.Log (spawnPoints);
 			//GameObject toInstantiate = wallTiles[Random.Range(0, wallTiles.Length)];
 			//Instantiate(toInstantiate, Vector3.forward * instantiateDistance, Quaternion.identity);
 			//Instantiate (toInstantiate, transform.forward * instantiateDistance, transform.rotation);
@@ -69,77 +90,64 @@ public class SprinklerProcGen: MonoBehaviour {
 		//Destroy(gameObject);
 	}
 
-	Vector3 RandomPosition(){
-		//generates random number between 0 and number of grid positions
-		int randomIndex = Random.Range(0, spawnPositions.Count);		
-		//stores randomly chosen grid position as variable
-		Vector3 randomPosition = spawnPositions[randomIndex];
-		//removes grid position from list, prevents multiple objects being spawned there
-		spawnPositions.RemoveAt(randomIndex);
-		//returns the newly assigned random position variable
-		return randomPosition;
+//	Vector3 RandomPosition(){
+//		//generates random number between 0 and number of grid positions
+//		int randomIndex = Random.Range(0, spawnPositions.Count);		
+//		//stores randomly chosen grid position as variable
+//		Vector3 randomPosition = spawnPositions[randomIndex]; 
+//		//removes grid position from list, prevents multiple objects being spawned there
+//		spawnPositions.RemoveAt(randomIndex);
+//		//returns the newly assigned random position variable
+//		return randomPosition;
+//	}
+//
+//	Quaternion RandomRotation(){
+//		int randomIndex = Random.Range (0, spawnRotations.Count);
+//		Quaternion randomRotation = spawnRotations[randomIndex];
+//		spawnRotations.RemoveAt(randomIndex);
+//		return randomRotation;
+//	}
+	//randomly chooses a spawn point from list
+	SpawnPointData RandomSpawnPoint(){
+		//generates random number between 0 and number of spawn points
+		int randomIndex = Random.Range (0, spawnPoints.Count);
+		//stores random spawn point as variable
+		SpawnPointData randomSpawn = spawnPoints[randomIndex];
+		//removes spawn point from list so it won't be used twice
+		spawnPoints.RemoveAt(randomIndex);
+		//returns spawn point as variable
+		return randomSpawn;
 	}
 
 
-//	void SpawnWalls(){
-//		GameObject toInstantiate = wallTiles[Random.Range(0, wallTiles.Length)];
-//		//Instantiate(toInstantiate, Vector3.forward * instantiateDistance, Quaternion.identity);
-//		Instantiate (toInstantiate, transform.forward * instantiateDistance, transform.rotation);
-//
-//	}
-	
-//	//generates list of positions
-//	void InitialiseList(){
-//		//clears list of any pre-existing positions
-//		gridPositions.Clear();
-//		//going from 1 to columns -1 leaves a border of open space, use 0 to columns if this is undesired
-//		for (int x = -1; x < columns -1; x++){
-//			for (int z = 1; z < rows; z++){
-//				gridPositions.Add (new Vector3(x * 5, 0f, z * 5));
-//			}
-//		}
-//	}
-	
-	//populates columns and rows with randomly chose gameobjects from arrays
-//	void BoardSetup(){
-//		boardHolder = new GameObject ("Board").transform;
-//		//going from -1 to columns +1 creates border outside, use 0 to columns if this is undesired
-//		for (int x = 0; x < columns; x++){
-//			for (int z = 0; z < rows; z++){
-//				//chooses random prefab from array, assigns to variable
-//				GameObject toInstantiate = floorTiles[Random.Range (0, floorTiles.Length)];
-//				
-//				GameObject instance = Instantiate(toInstantiate, new Vector3 (x * 5, 0f, z * 5), Quaternion.identity) as GameObject;
-//				//parents instantiated clone to organizer object
-//				instance.transform.SetParent(boardHolder);
-//			}
-//		}
-//	}
-//	
-//	
+
 	//used to spawns objects randomly, from selected array, numbering between min and max objects
-	void LayoutObjectAtRandom(GameObject[] tileArray, int minimum, int maximum){
+	void LayoutObjectAtRandom(GameObject[] wallArray, int minimum, int maximum){
 		//variable to control how many of an object to spawn 
 		int objectCount = Random.Range (minimum, maximum + 1);
 		//as long as we're below our random count...
 		for (int i = 0; i < objectCount; i++){
-			//calls random position function to get a set of coordinates
-			Vector3 randomPosition = RandomPosition();
+			//calls random spawn point function to get a set of coordinates
+			SpawnPointData randomSpawnPoint = RandomSpawnPoint();
+			//Vector3 randomPosition = RandomPosition();
+			//Quaternion randomRotation = RandomRotation();
 			//assigns random prefab from array
-			GameObject tileChoice = tileArray[Random.Range (0, tileArray.Length)];
-			//instantiates prefab at our random coords, with no rotation
-			Instantiate (tileChoice, randomPosition, Quaternion.identity);
+			GameObject wallChoice = wallArray[Random.Range (0, wallArray.Length)];
+			//instantiates prefab at our random spawn points position and rotation
+			GameObject instance = Instantiate (wallChoice, randomSpawnPoint.spawnPosition, randomSpawnPoint.spawnRotation) as GameObject;
+			//parents instatiated object to spawner for sake of organization		
+			instance.transform.SetParent(transform, false);
+
 		}
 	}
 	//function called by other game objects to setup
-	public void SetupScene(){
+	public void Start(){
 //		wallsPerColorCount = (Mathf.Floor(numberOfSpawnPositions * 0.2f),
 //		                      Mathf.Floor(numberOfSpawnPositions * 0.25f));
 
-		//calls board setup function
-		//BoardSetup();
+
 		//calls initialise list function
-		//InitialiseList();
+		InitialiseList();
 	//call layout function to spawns prefabs, passing in relavent arrays, mins, and maxs
 		LayoutObjectAtRandom(redWallTiles, wallsPerColorCount.minimum, wallsPerColorCount.maximum);
 		LayoutObjectAtRandom(blueWallTiles, wallsPerColorCount.minimum, wallsPerColorCount.maximum);
