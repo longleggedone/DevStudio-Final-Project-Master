@@ -1,16 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/EndGame.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../../Desktop/unityclass_mecanim-master/Assets/Scripts/DanceLogic.cs">
     <Files>
-      <File FileName="Assets/scripts/EndGame.cs" Line="15" Column="32" />
-      <File FileName="Assets/scripts/BoardManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/GameManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/HippoChomp.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/PlayerControlBlue.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/PlayerControlGreenReverse.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/PlayerControlBlueReverse.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/ScoreScriptBlue.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/ScoreScriptGreen.cs" Line="1" Column="1" />
+      <File FileName="../../../../../../Desktop/unityclass_mecanim-master/Assets/Scripts/DanceLogic.cs" Line="22" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
