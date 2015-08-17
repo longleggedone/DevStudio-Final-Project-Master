@@ -65,20 +65,20 @@ public class ballSpawner : MonoBehaviour {
 
 
 
-	void Update () {
+//	void Update () {
+//
+//
+//		// Destroys gameObject "Spawner" after certain amount of balls are created 
+//		GameObject[] GameBall = GameObject.FindGameObjectsWithTag ("GameBall");
+//
+//		int ballCounter = GameBall.Length;
+//
+//		// set to destroy gameObject "Spawner after 20 balls are creared.
+//		// change number to decide how many balls will be produced.
+//		if ( ballCounter == numberOfBalls ) { 
+//			Destroy (this.gameObject);
+//		}
 
-
-		// Destroys gameObject "Spawner" after certain amount of balls are created 
-		GameObject[] GameBall = GameObject.FindGameObjectsWithTag ("GameBall");
-
-		int ballCounter = GameBall.Length;
-
-		// set to destroy gameObject "Spawner after 20 balls are creared.
-		// change number to decide how many balls will be produced.
-		if ( ballCounter == numberOfBalls ) { 
-			Destroy (this.gameObject);
-		}
-
-	}
+//	}
 
 }
