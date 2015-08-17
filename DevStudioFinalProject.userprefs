@@ -1,8 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../../Desktop/unityclass_mecanim-master/Assets/Scripts/DanceLogic.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/GameOver.cs">
     <Files>
-      <File FileName="../../../../../../Desktop/unityclass_mecanim-master/Assets/Scripts/DanceLogic.cs" Line="22" Column="3" />
+      <File FileName="Assets/scripts/GameOver.cs" Line="21" Column="47" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
